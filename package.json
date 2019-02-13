@@ -1,6 +1,6 @@
 {
   "name": "@bigmogician/vue",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.1",
   "description": "vue, vuex, vue-router package for typescript.",
   "main": "index.js",
   "scripts": {
