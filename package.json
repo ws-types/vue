@@ -1,8 +1,9 @@
 {
   "name": "@bigmogician/vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "vue, vuex, vue-router package for typescript.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
