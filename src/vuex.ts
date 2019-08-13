@@ -57,16 +57,12 @@ type IncludeComputed<T, SOURCE> = MapComputed<MapPart<T, SOURCE>>;
 type IncludeMutations<T, SOURCE> = MapMutations<MapPart<T, SOURCE>>;
 type IncludeActions<T, SOURCE> = MapActions<MapPart<T, SOURCE>>;
 
-interface IVuexStoreAdditions<M, A> {
-  mutations?: M;
-  actions?: A;
-}
-
 // tslint:disable-next-line:interface-name
 interface VuexStore<S, G, M = {}, A = {}> extends Store<S> {
   state: S;
   getters: G;
-  "@hidden"?: IVuexStoreAdditions<M, A>;
+  mutations: M;
+  actions: A;
 }
 
 const MAPS = {
@@ -240,7 +236,7 @@ export namespace VUEX {
       bindMutations: bindMutations.bind(scope),
       bindGetters: bindGetters.bind(scope),
       createStore<S, G, M, A>(): VuexStore<S, G, M, A> {
-        return new Vuex.Store(scope);
+        return new Vuex.Store(scope) as any;
       },
       createComputed({
         state,
